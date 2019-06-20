@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lectorem
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+      <!-- <ion-button ion-button Large (click)="startCamera()" >Tirar foto</ion-button> -->
+      <ion-button ion-button block (click)="selectSource()" >Selecionar Fonte</ion-button>
+      <br>
+      <ion-button ion-button full (click)="recognizeImage()" [disabled]="!imagePath" >Ler Imagem</ion-button>
+      <br>
+      <ion-button ion-button *ngIf="imageText" (click)="speak()">Falar</ion-button>
+      <ion-button ion-button *ngIf="imageText" (click)="stopSpeak()">Interromper Fala</ion-button>
+      <img [src]="imagePath" *ngIf="imagePath"/>
+
+      <ion-card>
+        <ion-card-header>Texto</ion-card-header>
+        <ion-card-content>
+          {{imageText}}
+        </ion-card-content>
+      </ion-card>
+
+      <!-- {{"rodolfo"}}
+    <br>
+      path-{{imagePath}}
+  <br>
+      txt-{{imageText}} -->
+</ion-content>

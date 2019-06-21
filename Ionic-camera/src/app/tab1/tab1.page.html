@@ -1,27 +1,54 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar color="primary">
     <ion-title>
-      Lectorem
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content> 
-      <ion-button ion-button Large (click)="startCamera()" >Tirar foto</ion-button>
-      <ion-button ion-button block (click)="selectSource()" >Selecionar Fonte</ion-button>
-      <ion-button ion-button full (click)="recognizeImage()" [disabled]="!imagePath" >Ler Imagem</ion-button>
-      <img [src]="imagePath" *ngIf="imagePath">
+<ion-content>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>
+        <button (click)="startCamera()">
+          <ion-fab>
+              <ion-fab-button ><ion-icon name="power"></ion-icon></ion-fab-button>
+          </ion-fab>
+        </button>
+    </ion-col>
 
-      <ion-card>
+    <ion-col>
+      <button (click)="selectSource()">
+        <ion-fab>
+            <ion-fab-button ><ion-icon name="image"></ion-icon></ion-fab-button>
+        </ion-fab>
+      </button>
+    </ion-col>
+
+    <ion-col>
+        <button (click)="recognizeImage()" >
+          <ion-fab>
+              <ion-fab-button><ion-icon name="arrow-round-down"></ion-icon></ion-fab-button>
+          </ion-fab>
+        </button>
+    </ion-col>
+
+    <ion-col>
+    </ion-col>
+  </ion-row>  
+      <ion-card class="darklight" style="margin-top: 76px;" *ngIf="imagePath">
+          <ion-card-header>
+            Imagem escolhida
+          </ion-card-header>
+          <img [src]="imagePath">
+      </ion-card>
+
+      <ion-card class="darklight" style="margin-top: 76px;">
         <ion-card-header>Texto</ion-card-header>
         <ion-card-content>
           {{imageText}}
         </ion-card-content>
       </ion-card>
 
-      <!-- {{"rodolfo"}}
-    <br>
-      path-{{imagePath}}
-  <br>
-      txt-{{imageText}} -->
 </ion-content>
+

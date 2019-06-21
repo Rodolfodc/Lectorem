@@ -1,0 +1,7 @@
+{
+  "name": "Lectorem",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
